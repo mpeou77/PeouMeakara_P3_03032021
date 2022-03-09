@@ -1,0 +1,254 @@
+$color-primary: hsl(267, 66%, 60%);
+$color-secondary: hsl(317, 100%, 74%);
+$color-hover: hsl(316, 59%, 84%);
+$color-tertiary: hsl(165, 56%, 74%);
+$bg-color-explore:hsl(0, 9%, 91%);
+$bg-color-footer:hsl(0, 4%, 22%);
+$footer-text-color:hsl(0, 0%, 100%);
+
+@mixin text-design-light{ 
+    font-family: 'Robotolight', sans-serif;
+}
+@mixin sizepicture {
+    margin: 0 auto;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+@mixin fonction {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    background-color: $bg-color-explore;
+}
+@mixin round{
+   border-radius: 20px;
+}
+@mixin round-circle{
+   border-radius: 30px;
+}
+@mixin round-imageresto{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+@mixin shadows {
+    box-shadow: 3px 3px 3px grey; 
+}
+@mixin shadows-hover{
+    box-shadow: 3px 3px 30px grey;
+    opacity: 0.9;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; 
+    font-size: 17px;
+    letter-spacing: 0;
+    margin: 0;
+    padding:0;
+}
+
+header{
+    padding-bottom: 30px;
+}
+.title{
+    @include shadows;
+    img{
+    display: flex;
+    height: 30px;
+    margin: 0 auto;
+    padding: 20px 0px 10px;
+    }
+}
+
+.map{
+    display: flex;
+    background: $bg-color-explore;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.75;
+    &>p{
+        margin-left: 15px;
+    }
+    input{
+        border: 0;
+        background-color: $bg-color-explore;
+    }
+    ::placeholder{
+        opacity: 1;
+        color: black;
+        font-weight: bold;
+        font-family: 'Roboto';
+        font-size: 16px;
+    }
+}
+.explore{
+    text-align: center;
+    padding-top: 30px;
+    background-color: $bg-color-explore;
+    filter: brightness(1.08);
+
+    &__menu{
+        margin: 0 40px;
+        h2{font-weight: 700}
+        p{ @include text-design-light;
+        opacity: 0.6;   
+        }
+    }
+
+    &__restaurant{
+        padding-bottom: 30px;
+        p{
+            @include round-circle;
+            padding: 15px;
+            margin: 0px 80px;
+            color: white;
+            background:linear-gradient( $color-secondary, $color-primary);   
+        }
+    }
+}
+
+.fonction{
+    background-color: white;
+    text-align: left;
+    margin: auto 0;
+    padding-left: 30px;
+    margin-bottom: 30px;
+
+    &__number{
+    display: flex;  
+    @include text-design-light;
+    position: relative;
+    left: -20px;
+    font-size: 13px;
+    padding: 8px;
+    width: 8px;
+    height: 8px;
+    color: white;
+    background-color: $color-primary;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    }
+
+    &>h2{
+    padding: 50px 0px;
+    margin-bottom: 0px;
+    }
+
+    &__use{ 
+        padding: 5px;
+        padding-right: 0px;
+        margin-bottom: 30px;
+        
+        @include round;
+        @include fonction;
+        @include shadows;
+        align-items: center;
+        p{
+        margin-left: 20px;
+        }
+        i{color: grey;}
+    }
+
+    &__use:hover{
+    background-color: lighten($color: $color-primary , $amount: 32%);
+    i{color: $color-primary;}
+    @include shadows-hover;
+    cursor: pointer;    
+    }
+}
+
+.resto{
+    background-color: $bg-color-explore;
+    filter: brightness(1.07);
+    margin: 0;
+    padding: 30px 0px 50px;
+    h2{
+        margin-left: 20px;
+    }
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.restocard{
+    width: 90%;
+    margin: 0 auto;
+    @include round;
+    background-color: white;
+    margin-bottom: 20px;
+    @include shadows;
+    &__image img{
+    @include sizepicture;
+    @include round-imageresto;    
+    }
+    &__image .new{
+        display: flex;
+        width: 60px;
+        padding: 5px;
+        font-size: 14px;
+        background-color: $color-tertiary;
+        position: relative;  
+        float: right;
+        top: -160px;
+        margin-right: 10px;
+        align-items: center;
+        color: hsl(162, 38%, 37%);
+        font-weight: bold;
+        border-radius: 3px;
+        
+    }
+    &__description{
+        padding: 10px;
+    }
+    &__description>h3, &__description>p{
+        margin: 0;
+        margin: 3px 0;
+        }
+    &__description>p{
+        @include text-design-light;
+        font-size: 16px;
+       
+    }
+    &__heart{
+        font-size: 20px;
+      
+        
+    
+        border: 2px solid transparent;
+        position: relative;
+        top: -40px;
+        margin-right: 10px;
+        float: right;
+      
+        
+        
+    }
+    &:hover{@include shadows-hover;}
+    
+}
+
+footer{
+    background-color: $bg-color-footer;
+    color: $footer-text-color;
+    font-size: 15px;
+    @include text-design-light;
+    padding: 20px;
+    .footresto{
+        margin-bottom: 7px;
+    }
+    a{
+        text-decoration: none;
+        color: $footer-text-color;
+        p{ margin: 10px 0px;}
+    }
+    img{
+        height: 17px;
+        filter: invert(100%);
+        margin-bottom: 15px;
+    }
+}
