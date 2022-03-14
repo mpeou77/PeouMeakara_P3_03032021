@@ -1,3 +1,83 @@
+@-webkit-keyframes loading {
+  0% {
+    z-index: 1;
+  }
+  90% {
+    z-index: 1;
+    background-color: #eae6e6;
+  }
+  100% {
+    z-index: -1;
+    background-color: white;
+  }
+}
+
+@keyframes loading {
+  0% {
+    z-index: 1;
+  }
+  90% {
+    z-index: 1;
+    background-color: #eae6e6;
+  }
+  100% {
+    z-index: -1;
+    background-color: white;
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  90% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  90% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes grew {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes grew {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -6,10 +86,75 @@ body {
   letter-spacing: 0;
   margin: 0;
   padding: 0;
+  background-color: white;
 }
 
-header {
-  padding-bottom: 30px;
+.loader {
+  position: fixed;
+  -moz-position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -moz-align-items: center;
+  -moz-justify-content: center;
+  -moz-flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: loading 2s;
+          animation: loading 2s;
+  -moz-animation: loading 2s;
+  background-color: #eae6e6;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader__spinner {
+  width: 100px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 10px solid transparent;
+  border-left: 10px solid #98e2cf;
+  border-right: 10px solid #ff7ad9;
+  border-radius: 50%;
+  -webkit-animation: spin 2s linear;
+          animation: spin 2s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader__spinner .spinnerr {
+  width: 50px;
+  height: 50px;
+  border: 10px solid transparent;
+  border-left: 10px solid #ff7ad9;
+  border-right: 10px solid #98e2cf;
+  border-radius: 50%;
+  -webkit-animation: spinlittle 2s;
+          animation: spinlittle 2s;
+}
+
+.loader__charge {
+  margin-top: 30px;
+  font-size: 35px;
+  color: white;
 }
 
 .title {
@@ -109,7 +254,7 @@ header {
 .explore__restaurant p {
   border-radius: 30px;
   padding: 15px;
-  margin: 0px 80px;
+  margin: 0px 60px;
   color: white;
   background: -webkit-gradient(linear, left top, left bottom, from(#ff7ad9), to(#9256dc));
   background: linear-gradient(#ff7ad9, #9256dc);
@@ -120,7 +265,8 @@ header {
   text-align: left;
   margin: auto 0;
   padding-left: 30px;
-  margin-bottom: 30px;
+  padding-right: 20px;
+  padding-bottom: 50px;
 }
 
 .fonction__number {
@@ -181,8 +327,8 @@ header {
 
 .fonction__use:hover {
   background-color: #e9ddf8;
-  -webkit-box-shadow: 3px 3px 30px grey;
-          box-shadow: 3px 3px 30px grey;
+  -webkit-box-shadow: 3px 3px 20px grey;
+          box-shadow: 3px 3px 20px grey;
   opacity: 0.9;
   cursor: pointer;
 }
@@ -264,16 +410,32 @@ a {
 
 .restocard__heart {
   font-size: 20px;
-  border: 2px solid transparent;
   position: relative;
   top: -40px;
   margin-right: 10px;
   float: right;
 }
 
+.restocard__heart .heartfull {
+  display: none;
+}
+
+.restocard__heart:hover .heartvoid {
+  display: none;
+}
+
+.restocard__heart:hover .heartfull {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #9256dc;
+  -webkit-animation: heart 1s;
+          animation: heart 1s;
+}
+
 .restocard:hover {
-  -webkit-box-shadow: 3px 3px 30px grey;
-          box-shadow: 3px 3px 30px grey;
+  -webkit-box-shadow: 3px 3px 20px grey;
+          box-shadow: 3px 3px 20px grey;
   opacity: 0.9;
 }
 
