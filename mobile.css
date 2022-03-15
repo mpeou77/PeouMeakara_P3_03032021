@@ -105,9 +105,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -moz-align-items: center;
-  -moz-justify-content: center;
-  -moz-flex-direction: column;
   width: 100%;
   height: 100%;
   -webkit-animation: loading 2s;
@@ -147,8 +144,8 @@ body {
   border-left: 10px solid #ff7ad9;
   border-right: 10px solid #98e2cf;
   border-radius: 50%;
-  -webkit-animation: spinlittle 2s;
-          animation: spinlittle 2s;
+  -webkit-animation: grew 2s;
+          animation: grew 2s;
 }
 
 .loader__charge {
@@ -399,7 +396,6 @@ a {
 }
 
 .restocard__description > h3, .restocard__description > p {
-  margin: 0;
   margin: 3px 0;
 }
 
@@ -429,8 +425,8 @@ a {
   display: -ms-flexbox;
   display: flex;
   color: #9256dc;
-  -webkit-animation: heart 1s;
-          animation: heart 1s;
+  -webkit-animation: grew 1s;
+          animation: grew 1s;
 }
 
 .restocard:hover {
@@ -465,5 +461,80 @@ footer img {
   -webkit-filter: invert(100%);
           filter: invert(100%);
   margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .title img {
+    height: 50px;
+    padding-bottom: 20px;
+  }
+  .fonction {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .fonction h2 {
+    width: 100%;
+    padding: 20px;
+  }
+  .fonction__use {
+    width: 27%;
+    margin-bottom: 50px;
+  }
+  .resto {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .resto h2 {
+    width: 100%;
+  }
+  .restocard {
+    width: 360px;
+    margin-bottom: 30px;
+  }
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    height: 60px;
+    padding-top: 60px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer img {
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  footer .footresto {
+    margin-top: 5px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .explore__restaurant {
+    width: 50%;
+    margin: auto;
+  }
+  .restocard {
+    width: 470px;
+  }
 }
 /*# sourceMappingURL=mobile.css.map */

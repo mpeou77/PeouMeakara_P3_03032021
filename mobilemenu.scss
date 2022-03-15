@@ -79,7 +79,7 @@ header{
             }
         }
         &__logo img{
-            height: 30px; width: auto;
+            height: 30px;
         }
     } 
     img{
@@ -206,4 +206,52 @@ footer{
         filter: invert(100%);
         margin-bottom: 15px;
     }
+}
+
+@media  screen and (min-width: 768px) {
+    header{
+        .titlemenu__logo img{
+        height: 50px;
+        padding-bottom: 20px;
+        }
+        img{ height: 300px;}
+    }
+    main{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .ctn{ 
+        width: 47%;
+        margin:0 auto;
+    }
+    .title{
+        width: 100%;
+    }
+    .command{
+        width: 100%;
+        padding: 20px 0px;
+        font-size: 20px;
+    }
+    footer{
+        display: flex;
+        position: relative;
+        height: 60px;
+        padding-top: 60px;
+        align-items: center;
+        justify-content: space-between;
+        img{   
+            height: 30px;
+            position: absolute; 
+            top: 20px;
+            left: 20px;
+        }
+        .footresto{
+            margin-top: 5px;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .ctn{ width: 30%;}
+    .command{ width: 50%; margin: 40px auto;}
 }

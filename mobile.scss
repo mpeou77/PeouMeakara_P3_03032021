@@ -73,10 +73,6 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    -moz-align-items: center;
-    -moz-justify-content: center;
-    -moz-flex-direction: column;
-
     width: 100%;
     height: 100%;
     animation: loading 2s;
@@ -99,7 +95,7 @@ body{
         border-left: 10px solid $color-secondary;
             border-right: 10px solid $color-tertiary;
             border-radius: 50%;
-            animation: spinlittle 2s;
+            animation: grew 2s;
             
          }
         border-radius: 50%;
@@ -178,6 +174,7 @@ body{
     padding-left: 30px;
     padding-right: 20px;
     padding-bottom: 50px;
+
     &__number{
     display: flex;  
     @include text-design-light;
@@ -266,7 +263,7 @@ a{
         padding: 10px;
     }
     &__description>h3, &__description>p{
-        margin: 0;
+        
         margin: 3px 0;
         }
     &__description>p{
@@ -288,7 +285,7 @@ a{
         .heartfull{
             display: flex; 
             color: $color-primary;   
-            animation: heart 1s;
+            animation: grew 1s;
         }
     }
     &:hover{ @include shadows-hover;}
@@ -314,3 +311,65 @@ footer{
         margin-bottom: 15px;
     }
 }
+
+@media only screen and (min-width: 768px) { 
+    .title img{height:50px; padding-bottom: 20px;} 
+    .fonction{
+        h2{
+            width: 100%;
+            padding:20px;
+        }
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0px;
+        justify-content: space-around;
+         &__use{
+        width:27%;
+        margin-bottom: 50px;
+        }
+    }
+    .resto{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        h2{width: 100%;}
+    }
+    .restocard{
+        width: 360px;
+        margin-bottom: 30px;
+          
+    }
+    footer{
+        display: flex;
+        position: relative;
+        height: 60px;
+        padding-top: 60px;
+        align-items: center;
+        justify-content: space-between;
+        img{
+            
+            height: 30px;
+            position: absolute; 
+            top: 20px;
+            left: 20px;
+        }
+        .footresto{
+            margin-top: 5px;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .explore{
+        &__restaurant {
+            width:50%;
+            margin: auto;
+        }
+    } 
+    .restocard{
+        width: 470px;
+    }
+}
+
+
+
