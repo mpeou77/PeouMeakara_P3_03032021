@@ -1,3 +1,25 @@
+@-webkit-keyframes grew {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes grew {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 @-webkit-keyframes introfade {
   0% {
     -webkit-transform: translateY(15px);
@@ -116,6 +138,31 @@ main {
   font-family: 'Shrikhand', sans-serif;
 }
 
+.title .heartfull {
+  display: none;
+}
+
+.title__heart {
+  font-size: 25px;
+}
+
+.title__heart:hover {
+  cursor: pointer;
+}
+
+.title__heart:hover .heartvoid {
+  display: none;
+}
+
+.title__heart:hover .heartfull {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #9256dc;
+  -webkit-animation: grew 1s;
+          animation: grew 1s;
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -192,7 +239,7 @@ main {
 .container__ok {
   background-color: #98e2cf;
   position: absolute;
-  right: -81px;
+  right: -82px;
   padding: 28px;
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
@@ -247,6 +294,13 @@ main {
   background: linear-gradient(#ff7ad9, #9256dc);
 }
 
+.command:hover {
+  -webkit-box-shadow: 3px 3px 20px grey;
+          box-shadow: 3px 3px 20px grey;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
 footer {
   background-color: #3a3636;
   color: white;
@@ -299,6 +353,8 @@ footer img {
   }
   .command {
     width: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
     padding: 20px 0px;
     font-size: 20px;
   }

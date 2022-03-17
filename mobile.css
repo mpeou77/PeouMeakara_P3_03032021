@@ -91,7 +91,6 @@ body {
 
 .loader {
   position: fixed;
-  -moz-position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,7 +108,6 @@ body {
   height: 100%;
   -webkit-animation: loading 2s;
           animation: loading 2s;
-  -moz-animation: loading 2s;
   background-color: #eae6e6;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
@@ -257,6 +255,13 @@ body {
   background: linear-gradient(#ff7ad9, #9256dc);
 }
 
+.explore__restaurant p:hover {
+  -webkit-box-shadow: 3px 3px 20px grey;
+          box-shadow: 3px 3px 20px grey;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
 .fonction {
   background-color: white;
   text-align: left;
@@ -298,6 +303,7 @@ body {
   padding: 5px;
   padding-right: 0px;
   margin-bottom: 30px;
+  margin-left: 50px;
   border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -320,6 +326,19 @@ body {
 
 .fonction__use i {
   color: grey;
+}
+
+.fonction__use .centre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
 }
 
 .fonction__use:hover {
@@ -485,6 +504,10 @@ footer img {
   .fonction__use {
     width: 27%;
     margin-bottom: 50px;
+  }
+  .explore__restaurant {
+    width: 50%;
+    margin: auto;
   }
   .resto {
     display: -webkit-box;

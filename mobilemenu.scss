@@ -29,6 +29,14 @@ $color-secondary: hsl(317, 100%, 74%);
     overflow: hidden;
     white-space: nowrap;
 }
+@mixin shadows-hover{
+    box-shadow: 3px 3px 20px grey;
+    opacity: 0.9;
+}
+@keyframes grew{
+    0%{ transform: scale(0);}
+    100%{transform: scale(1); }
+}
 
 @keyframes introfade {
      0%{
@@ -103,6 +111,17 @@ main{
     font-size: 18px;
     margin: 0;
     @include text-design;  
+    .heartfull {display: none}
+    &__heart{ font-size: 25px;}
+    &__heart:hover {
+        .heartvoid{display:none;}
+        .heartfull{
+            display: flex; 
+            color: $color-primary;   
+            animation: grew 1s;
+        }
+        cursor: pointer;
+    }
 }
 
 .container{
@@ -150,7 +169,7 @@ main{
     &__ok{ 
         background-color: $color-tertiary;
         position: absolute;
-        right: -81px;
+        right: -82px;
         padding: 28px;
         border-top-right-radius: 16px;
         border-bottom-right-radius: 16px;
@@ -185,6 +204,10 @@ main{
     color: white;
     text-align: center;
     background:linear-gradient( $color-secondary, $color-primary);   
+    &:hover {
+        @include shadows-hover;
+        cursor: pointer;
+    }
 }
 
 footer{
@@ -229,6 +252,8 @@ footer{
     }
     .command{
         width: 100%;
+        margin-left: 20%;
+        margin-right: 20%;
         padding: 20px 0px;
         font-size: 20px;
     }
