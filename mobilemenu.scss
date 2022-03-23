@@ -184,10 +184,7 @@ main{
     }
     &:hover{cursor: pointer;}
     &:hover > &__text{margin-right: 81px;}
-    &:hover > &__ok,&:hover > &__price {
-        transform: translateX(-81px) ;
-        }
-
+    &:hover > &__ok,&:hover > &__price {transform: translateX(-81px) ;}
     &:hover > &__ok i{
         transform: rotate(720deg) ;
      }    
@@ -231,7 +228,7 @@ footer{
     }
 }
 
-@media  screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
     header{
         .titlemenu__logo img{
         height: 50px;
